@@ -1,0 +1,87 @@
+
+<ion-content>
+  <div class="imagen">
+    
+    <img class="icono" src="assets/img/icono.jpg" alt="Logo">
+  </div>
+</ion-content>
+
+<ion-content class="ion-padding">
+  <br>
+
+  <h1>Etapas De Cultivos</h1>
+  <br>
+  <div class="cards-container">
+    <ion-card class="card">
+    <ion-card-content>
+      <div style="display: flex; align-items: center;">
+        <img alt="" src="https://i.pinimg.com/564x/17/ed/ff/17edff0044c2fb9ccbb3921c1ed55317.jpg" style="width: 50px; height: 50px; margin-right: 10px;" />
+        
+          <div slot="label"> 
+            <ion-text>Cultivo de Hoja Verde:</ion-text>
+            <br>
+            <ion-label>{{ cultivo1Text }}</ion-label><br>
+          </div>
+        
+      </div>
+    </ion-card-content>
+  </ion-card>
+  
+  <br>
+<!--
+  <ion-card class="card">
+    <ion-card-content>
+      <div style="display: flex; align-items: center;">
+        <img alt="" src="https://i.pinimg.com/564x/b4/d7/58/b4d758a26fa851ed684271220a2264eb.jpg" style="width: 50px; height: 50px; margin-right: 10px;" />
+        <div slot="label"> 
+          <ion-text>Cultivo de Tomate:</ion-text>
+          <br>
+          <ion-label>Flor</ion-label><br>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>-->
+</div>
+  <br>
+  <h1>Informacion</h1>
+
+  <ion-card>
+    <ion-item [button]="true" detail="false">
+      <div class="unread-indicator-wrapper" slot="start"></div>
+      <ion-label>
+        <ion-text>Cultivos</ion-text><br />
+        <ion-note color="medium" class="ion-text-wrap">Estos cultivos solo permiten
+          plantas de hoja verde como perejil, lechugam excepto la lechuga repollo por su peso, apio, etc.
+        </ion-note>
+      </ion-label>
+    </ion-item>
+  
+    <ion-item [button]="true" detail="false">
+      <div class="unread-indicator-wrapper" slot="start"></div>
+      <ion-label>
+        <ion-text>Niveles de Ph</ion-text><br />
+        <ion-note color="medium" class="ion-text-wrap">Para el hidroponico el nivel de ph en el que se deberia de estar
+          equivale entre el 6 a 7.
+        </ion-note>
+        <img class="ph" alt="Silhouette of mountains" src="https://tecnicrop.com/storage/blogs/60/STo840E1jKARCptrgAmxUPy6SOTFQs5whJRxWATG.png" />
+      </ion-label>
+    </ion-item>
+
+    <ion-item [button]="true" detail="false">
+      <div class="unread-indicator-wrapper" slot="start"></div>
+      <ion-label>
+        <ion-button id="trigger-button">App Apk</ion-button>
+<ion-popover trigger="trigger-button">
+  <ng-template>
+    <ion-content class="ion-padding">Descarga la App HidroFarm
+      <img class="icono" src="../../assets/img/descarga.png" />
+    </ion-content>
+  </ng-template>
+</ion-popover>
+
+      </ion-label>
+    </ion-item>
+  </ion-card>
+  
+
+</ion-content>

@@ -1,0 +1,208 @@
+/* Establecer el color de fondo personalizado para el ion-toolbar */
+*{
+    margin: 0%;
+  }
+  @font-face {
+    font-family: 'Chin';
+    src: url('../../assets/letras/KGRedHands.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Letrero';
+    src: url('../../assets/letras/LTSaeada-Bold.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'texto';
+    src: url('../../assets/letras/Classica-Book.ttf') format('truetype');
+  }
+  
+  ion-content {
+    padding: 0; /* Eliminar el relleno del contenido */
+  }
+  
+  .custom-header {
+    margin: 0; /* Eliminar el margen del encabezado */
+  }
+  
+  
+  .custom-toolbar {
+    --background: #A4BE7B;
+    --color: #576442;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin: 0; /* Eliminar el margen de la barra de herramientas */
+  }
+  
+  .icono-container {
+    position: relative;
+  }
+  
+  .icono {
+    width: 100%; /* Ancho del 100% del contenedor padre */
+    margin: 0; /* Elimina los márgenes */
+    border-radius: 0; /* Elimina los bordes redondos */
+    padding: 0; /* Eliminar cualquier relleno */
+  }
+  
+  .icono-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #BFEA7C; /* Cambiar al color deseado */
+    opacity: 0.5; /* Ajustar la opacidad según sea necesario */
+  }
+  
+  .imagen{
+    background-color: black;
+  }
+  
+  img{
+    width: 40%;
+    margin: 2%;
+    border-radius: 20%;
+  }
+  
+  .ph{
+    border-radius: 0;
+    width: 320px;
+    display: block;
+    margin: auto;
+  }
+  ion-popover {
+    --background: rgba(40, 218, 64, 0.6);
+    --backdrop-opacity: 0.6;
+    --box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.6);
+    --color: white;
+    --width: 390px;
+  }
+  
+  ion-popover ion-content {
+    --background: rgba(18, 108, 42, 0.6);
+  }
+  
+  ion-popover::part(backdrop) {
+    background-color: rgb(34, 69, 35);
+  }
+  
+  ion-select {
+    --background: #eef9e6;
+  }
+  
+  ion-content  {
+    --background: #fffefd;
+  }
+  
+  ion-col {
+    background-color: #eef9e6;
+    margin: 0%;
+    color: #36662A;
+    text-align: center;
+  }
+  
+  ion-card {
+    --background: #eef9e6;
+    --color: #46647a;
+    width: 90%; /* Establece el ancho del card al 90% del ancho de la pantalla */
+    margin: auto; /* Centra el card horizontalmente */
+  }
+  
+  ion-card-title {
+    --color: #6E7C7C;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  h1{
+    color: #A7D129;
+    font-family:Letrero;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  p{
+    color: #36662A;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  
+  ion-select{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .unread-indicator {
+    background: var(--ion-color-primary);
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    position: absolute;
+    inset-inline-start: 12px;
+    top: 12px;
+  }
+  
+  .metadata-end-wrapper {
+    position: absolute;
+    top: 10px;
+    inset-inline-end: 10px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  ion-label strong {
+    display: block;
+    max-width: calc(100% - 60px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  ion-label ion-note {
+    font-size: 0.9rem;
+  }
+  
+  ion-list{
+    background: #eef9e6;
+  }
+  
+  .unread-indicator-wrapper{
+    --background: #E8F5EE;
+  }
+  
+  ion-item{
+    --background: #eef9e6;
+    margin: 2px;
+  }
+  
+  ion-text{
+    color: #396f47;
+    font-family:Letrero;
+    font-size: 20px;
+  }
+
+  ion-label{
+    color: #000000;
+    font-family:Chin;
+    font-size: 20px;
+  }
+  
+  ion-note{
+    font-family:texto;
+    color: #485863;
+    font-size: 10px;
+  } 
+  
+  @media screen and (min-width: 500px) {
+    .cards-container {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .card {
+      width: calc(50% - 10px); /* Establece el ancho de cada card al 50% del contenedor, menos el espacio entre ellos */
+      margin: 0;
+    }
+  }
+  
+  

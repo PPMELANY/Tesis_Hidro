@@ -1,0 +1,149 @@
+/* Establecer el color de fondo personalizado para el ion-toolbar */
+@font-face {
+    font-family: 'Chin';
+    src: url('../../assets/letras/KGRedHands.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Letrero';
+    src: url('../../assets/letras/LTSaeada-Bold.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'texto';
+    src: url('../../assets/letras/Classica-Book.ttf') format('truetype');
+  }
+
+  ion-button{
+    align-items: center;
+    margin: 5%;
+  }
+  
+  .image-container {
+    position: relative;
+  }
+  
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Cambia el color del texto según tus necesidades */
+  }
+  .mont  {
+    color: #000000;
+    font-family:texto;
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  .custom-toolbar {
+    --background: #D5F0C1;
+    --color: #616F39;
+    font-family:Chin;
+    text-align: center;
+  }
+  
+  ion-content  {
+    --background: #FFFFFF;
+    margin: 0%;
+  }
+  ion-col {
+    margin: 2%;
+    color: #36662A;
+    text-align: center;
+  }
+  
+  h1{
+    color: #396f47;
+    font-family:texto;
+    font-size: 2vw; /* Cambia el tamaño de la fuente de h1 a 3% del ancho de la ventana gráfica */
+  }
+  
+  p{
+    color: #36662A;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+  }
+  
+  .title{
+    color: #A7D129;
+    font-family:Letrero;
+    margin: 5%;
+    text-align: center;
+    font-size: 30px;
+  }
+  *{
+    margin: 1;
+    padding: 1;
+    box-sizing: border-box;
+  }
+  
+  .circle {
+    position: relative;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(149, 178, 154, 0.5);
+    border: 10px solid transparent; /* Ancho del borde */
+    
+    animation: animate 5s linear infinite;
+  }
+  
+  .circle2 {
+    position: relative;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(149, 178, 154, 0.5);
+    border: 10px solid transparent; /* Ancho del borde */
+    
+    animation: animate 5s linear infinite;
+  }
+  @media screen and (max-width: 600px) {
+    h1 {
+      font-size: 30px; /* Establece el tamaño de la fuente de h1 en 30px cuando el ancho de la pantalla sea menor que 600px */
+    }
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .image-container {
+    position: relative;
+  }
+  
+  .red { border-top-color: rgb(253, 48, 48); border-bottom-color: rgb(253, 48, 48); border-left-color: #dae0ce; border-right-color:#dae0ce; }
+  .orange { border-top-color: orange; border-bottom-color: orange; border-left-color: #dae0ce; border-right-color: #dae0ce; }
+  .yellow { border-top-color: yellow; border-bottom-color: yellow; border-left-color: #dae0ce; border-right-color: #dae0ce; }
+  .lightgreen { border-top-color: rgb(156, 255, 156); border-bottom-color: rgb(156, 255, 156); border-left-color: #dae0ce; border-right-color: #dae0ce; }
+  .darkgreen { border-top-color: rgb(10, 121, 10); border-bottom-color: rgb(10, 121, 10); border-left-color: #dae0ce; border-right-color: #dae0ce; }
+  .darkblue { border-top-color: rgb(2, 2, 181); border-bottom-color: rgb(2, 2, 181); border-left-color: #dae0ce; border-right-color: #dae0ce; }
+  .purple { border-top-color: rgb(146, 32, 146); border-bottom-color: rgb(146, 32, 146); border-left-color: #dae0ce; border-right-color: #dae0ce; }
+  
+  ion-card {
+    --background: #eef9e6;
+    --color: #798b81; /* Verde oscuro */
+    margin: 0%;
+  }
+  

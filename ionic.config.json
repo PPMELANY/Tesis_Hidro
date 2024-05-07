@@ -1,0 +1,7 @@
+{
+  "name": "HidroApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
