@@ -25,23 +25,9 @@ export class Tab1Page {
 
   constructor(private database: Database) {}
 
-  async ngOnInit() {
+  async ngOnInit(message: string) {
     await LocalNotifications.requestPermissions(); // Solicitar permisos de la app
     await LocalNotifications.schedule({ // Elaboración del objeto notificación
-      notifications: [
-        {
-          title: "Esta es una notificación emergente",
-          body: "Esta notificación debería ejecutarse en segundo plano pero no cuando la app esté cerrada",
-          id: 1
-        }
-      ]
-    });
-
-    this.checkNotifications(); // Llamar a la función de verificación de notificaciones al inicializar el componente
-  }
-
-  async sendNotification(message: string) {
-    await LocalNotifications.schedule({
       notifications: [
         {
           title: "Alerta",
@@ -52,7 +38,10 @@ export class Tab1Page {
           }
         }
       ]
+
     });
+
+    this.checkNotifications(); // Llamar a la función de verificación de notificaciones al inicializar el componente
   }
 
   async checkNotifications() {
@@ -62,9 +51,9 @@ export class Tab1Page {
 
       // Verificar pH del cultivo 1
       if (valores_db.ph1 < 6) {
-        this.sendNotification("El pH del cultivo 1 está bajo.");
+        this.ngOnInit("El pH del cultivo 1 está bajo.");
       } else if (valores_db.ph1 > 7.99) {
-        this.sendNotification("El pH del cultivo 1 está alto.");
+        this.ngOnInit("El pH del cultivo 1 está alto.");
       }
 
       // Verificar pH del cultivo 2
@@ -76,7 +65,7 @@ export class Tab1Page {
 
       // Verificar nutrientes
       if (valores_db.nutrientes1 <= 25) {
-        this.sendNotification("Los niveles de nutrientes están bajos.");
+        this.ngOnInit("Los niveles de nutrientes están bajos.");
       }
 
       // Actualizar valores de sensores
