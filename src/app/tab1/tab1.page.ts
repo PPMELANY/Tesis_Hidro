@@ -25,57 +25,34 @@ export class Tab1Page {
 
   constructor(private database: Database) {}
 
-  async ngOnInit(message: string) {
+  async ngOnInit() {
     await LocalNotifications.requestPermissions(); // Solicitar permisos de la app
-    await LocalNotifications.schedule({ // Elaboración del objeto notificación
-      notifications: [
-        {
-          title: "Alerta",
-          body: message,
-          id: new Date().getTime(), // ID único para cada notificación
-          schedule:{ // Permite que la notificación se ejecute incluso durante el modo Reposo
-          }
-        }
-      ]
-
+    await LocalNotifications.schedule({ // Elaboracion del objeto notificacion
+        notifications: [
+            {
+                title: "HidroFarm",
+                body: "¡No dejes que tus plantas te hagan la 'raíz cuadrada'! ¡Revisa tu app de cultivos y haz que crezcan felices!",
+                id: 1,
+                schedule:{
+                  allowWhileIdle:true// Permite que la notificación se ejecute incluso durante el modo Reposo
+                }
+            }
+        ]
     });
 
-    this.checkNotifications(); // Llamar a la función de verificación de notificaciones al inicializar el componente
-  }
-
-  async checkNotifications() {
     const route = ref(this.database, 'sensores');
     object(route).subscribe(attributes => {
-      const valores_db = attributes.snapshot.val();
-
-      // Verificar pH del cultivo 1
-      if (valores_db.ph1 < 6) {
-        this.ngOnInit("El pH del cultivo 1 está bajo.");
-      } else if (valores_db.ph1 > 7.99) {
-        this.ngOnInit("El pH del cultivo 1 está alto.");
-      }
-
-      // Verificar pH del cultivo 2
-      // if (valores_db.ph2 < 6) {
-      //   this.sendNotification("El pH del cultivo 2 está bajo.");
-      // } else if (valores_db.ph2 > 7.99) {
-      //   this.sendNotification("El pH del cultivo 2 está alto.");
-      // }
-
-      // Verificar nutrientes
-      if (valores_db.nutrientes1 <= 25) {
-        this.ngOnInit("Los niveles de nutrientes están bajos.");
-      }
-
-      // Actualizar valores de sensores
-      this.ph1Sensor = valores_db.ph1;
-      this.ph2Sensor = valores_db.ph2;
-      this.nutriSensor1 = valores_db.nutrientes1;
-      this.nutriSensor2 = valores_db.nutrientes2;
-      this.solid1Sen = valores_db.tds1;
-      this.solid2Sen = valores_db.tds2;
+        const valores_db = attributes.snapshot.val();
+        console.log(valores_db);
+        this.ph1Sensor = valores_db.ph1;
+        this.ph2Sensor = valores_db.ph2;
+        this.nutriSensor1 = valores_db.nutrientes1;
+        this.nutriSensor2 = valores_db.nutrientes2;
+        this.solid1Sen = valores_db.tds1;
+        this.solid2Sen = valores_db.tds2;
     });
-  }
+}
+
 
   async BTNBombas() {
     // Cambiar el estado del LED
