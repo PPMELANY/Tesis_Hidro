@@ -33,6 +33,10 @@
     text-align: center;
     margin: 0; /* Eliminar el margen de la barra de herramientas */
   }
+  .img-container {
+    display: flex;
+    justify-content: center;
+  }
   
   .icono-container {
     position: relative;
@@ -77,6 +81,7 @@
     --box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.6);
     --color: white;
     --width: 390px;
+    --align-items:center;
   }
   
   ion-popover ion-content {
