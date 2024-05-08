@@ -27,7 +27,6 @@ export class Tab1Page {
 
   async ngOnInit(message: string) {
     await LocalNotifications.requestPermissions(); // Solicitar permisos de la app
-    this.checkNotificationsWithDelay();
     await LocalNotifications.schedule({ // Elaboración del objeto notificación
       notifications: [
         {
@@ -42,13 +41,6 @@ export class Tab1Page {
     });
 
     this.checkNotifications(); // Llamar a la función de verificación de notificaciones al inicializar el componente
-  }
-
-  async checkNotificationsWithDelay() {
-    this.checkNotifications();
-    setTimeout(() => {
-      this.checkNotificationsWithDelay();
-    }, 30000); // 30 segundos
   }
 
   async checkNotifications() {
