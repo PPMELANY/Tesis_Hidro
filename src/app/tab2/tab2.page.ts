@@ -32,7 +32,7 @@ export class Tab2Page {
       case 3:
         return 'Cosecha';
       default:
-        return '--'; // Valor inicial
+        return '---'; // Valor inicial
     }
   }
 }
