@@ -30,12 +30,10 @@ export class Tab1Page {
     await LocalNotifications.schedule({ // Elaboracion del objeto notificacion
         notifications: [
             {
-                title: "HidroFarm",
+                title: "HidroGuard",
                 body: "¡No dejes que tus plantas te hagan la 'raíz cuadrada'! ¡Revisa tu app de cultivos y haz que crezcan felices!",
                 id: 1,
-                schedule:{
-                  allowWhileIdle:true// Permite que la notificación se ejecute incluso durante el modo Reposo
-                }
+                
             }
         ]
     });
@@ -50,9 +48,69 @@ export class Tab1Page {
         this.nutriSensor2 = valores_db.nutrientes2;
         this.solid1Sen = valores_db.tds1;
         this.solid2Sen = valores_db.tds2;
+
+         // Ajustar el valor de ph1Sensor según la nueva tabla
+    if (this.ph1Sensor >= 5202 && this.ph1Sensor <= 8000) {
+      this.ph1Sensor = 15;
+    } else if (this.ph1Sensor >= 4902 && this.ph1Sensor <= 5201) {
+      this.ph1Sensor = 14;
+    } else if (this.ph1Sensor >= 4602 && this.ph1Sensor <= 4901) {
+      this.ph1Sensor = 13;
+    } else if (this.ph1Sensor >= 4302 && this.ph1Sensor <= 4601) {
+      this.ph1Sensor = 12;
+    } else if (this.ph1Sensor >= 4002 && this.ph1Sensor <= 4301) {
+      this.ph1Sensor = 11;
+    } else if (this.ph1Sensor >= 3702 && this.ph1Sensor <= 4001) {
+      this.ph1Sensor = 10;
+    } else if (this.ph1Sensor >= 3402 && this.ph1Sensor <= 3701) {
+      this.ph1Sensor = 9;
+    } else if (this.ph1Sensor >= 3102 && this.ph1Sensor <= 3401) {
+      this.ph1Sensor = 8;
+    } else if (this.ph1Sensor >= 2801 && this.ph1Sensor <= 3101) {
+      this.ph1Sensor = 7;
+    } else if (this.ph1Sensor >= 2500 && this.ph1Sensor <= 2800) {
+      this.ph1Sensor = 6;
+    } else if (this.ph1Sensor >= 2200 && this.ph1Sensor <= 2499) {
+      this.ph1Sensor = 5;
+    } else if (this.ph1Sensor >= 1900 && this.ph1Sensor <= 2199) {
+      this.ph1Sensor = 4;
+    } else if (this.ph1Sensor >= 1600 && this.ph1Sensor <= 1899) {
+      this.ph1Sensor = 3;
+    } else if (this.ph1Sensor >= 1300 && this.ph1Sensor <= 1599) {
+      this.ph1Sensor = 2;
+    } else if (this.ph1Sensor >= 701 && this.ph1Sensor <= 1299) {
+      this.ph1Sensor = 1;
+    } else {
+      this.ph1Sensor = 0;
+    }
+                                     // NUTRIENTES----------------------------
+    if (this.nutriSensor1 >= 0 && this.nutriSensor1 <= 699) {
+      this.nutriSensor1 = 0;
+    } else if (this.nutriSensor1 >= 700 && this.nutriSensor1 <= 1999) {
+      this.nutriSensor1 = 25;
+    } else if (this.nutriSensor1 >= 2000 && this.nutriSensor1 <= 2350) {
+      this.nutriSensor1 = 50;
+    } else if (this.nutriSensor1 >= 2351 && this.nutriSensor1 <= 3000) {
+      this.nutriSensor1 = 75;
+    }else if (this.nutriSensor1 >= 3001 && this.nutriSensor1 <= 7000) {
+      this.nutriSensor1 = 100;
+    }
+
+                                     // tds----------------------------
+if (this.solid1Sen >= 0 && this.solid1Sen <= 699) {
+      this.solid1Sen = 0;
+    } else if (this.solid1Sen >= 700 && this.solid1Sen <= 1999) {
+      this.solid1Sen = 25;
+    } else if (this.solid1Sen >= 2000 && this.solid1Sen <= 2350) {
+      this.solid1Sen = 50;
+    } else if (this.solid1Sen >= 2351 && this.solid1Sen <= 3000) {
+      this.solid1Sen = 75;
+    }else if (this.solid1Sen >= 3001 && this.solid1Sen <= 7000) {
+      this.solid1Sen = 100;
+    }
+
     });
 }
-
 
   async BTNBombas() {
     // Cambiar el estado del LED
@@ -116,11 +174,13 @@ export class Tab1Page {
   }
   getColorClass3() {
     if (this.nutriSensor1 >= 0 && this.nutriSensor1 <= 25) {
-      return 'red';
+      return 'darkblue';
     } else if (this.nutriSensor1 >= 26 && this.nutriSensor1 <= 49) {
       return 'yellow';
-    } else if (this.nutriSensor1 >= 50 && this.nutriSensor1 <= 100) {
+    } else if (this.nutriSensor1 >= 50 && this.nutriSensor1 <= 74) {
       return 'lightgreen';
+    }else if (this.nutriSensor1 >= 75 && this.nutriSensor1 <= 100) {
+      return 'red';
     }
     return 'black'; // Valor predeterminado si ninguno de los bloques if se cumple
   }
@@ -138,11 +198,13 @@ export class Tab1Page {
 
   getColorClass5() {
     if (this.solid1Sen >= 0 && this.solid1Sen <= 25) {
-      return 'red';
+      return 'darkblue';
     } else if (this.solid1Sen >= 26 && this.solid1Sen <= 49) {
       return 'yellow';
-    } else if (this.solid1Sen >= 50 && this.solid1Sen <= 100) {
+    } else if (this.solid1Sen >= 50 && this.solid1Sen <= 74) {
       return 'lightgreen';
+    }else if (this.solid1Sen >= 75 && this.solid1Sen <= 100) {
+      return 'red';
     }
     return 'black'; // Valor predeterminado si ninguno de los bloques if se cumple
   }
