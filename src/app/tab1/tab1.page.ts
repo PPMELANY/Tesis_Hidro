@@ -33,7 +33,9 @@ export class Tab1Page {
                 title: "HidroGuard",
                 body: "¡No dejes que tus plantas te hagan la 'raíz cuadrada'! ¡Revisa tu app de cultivos y haz que crezcan felices!",
                 id: 1,
-                
+                schedule:{
+                  allowWhileIdle:true// Permite que la notificación se ejecute incluso durante el modo Reposo
+                }
             }
         ]
     });
