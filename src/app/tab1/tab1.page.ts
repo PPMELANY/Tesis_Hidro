@@ -52,35 +52,35 @@ export class Tab1Page {
         this.solid2Sen = valores_db.tds2;
 
          // Ajustar el valor de ph1Sensor según la nueva tabla
-    if (this.ph1Sensor >= 5202 && this.ph1Sensor <= 8000) {
+    if (this.ph1Sensor >= 8001 && this.ph1Sensor <= 8500) {
       this.ph1Sensor = 15;
-    } else if (this.ph1Sensor >= 4902 && this.ph1Sensor <= 5201) {
+    } else if (this.ph1Sensor >= 7801 && this.ph1Sensor <= 8000) {
       this.ph1Sensor = 14;
-    } else if (this.ph1Sensor >= 4602 && this.ph1Sensor <= 4901) {
+    } else if (this.ph1Sensor >= 7301 && this.ph1Sensor <= 7800) {
       this.ph1Sensor = 13;
-    } else if (this.ph1Sensor >= 4302 && this.ph1Sensor <= 4601) {
+    } else if (this.ph1Sensor >= 6901 && this.ph1Sensor <= 7300) {
       this.ph1Sensor = 12;
-    } else if (this.ph1Sensor >= 4002 && this.ph1Sensor <= 4301) {
+    } else if (this.ph1Sensor >= 6401 && this.ph1Sensor <= 6900) {
       this.ph1Sensor = 11;
-    } else if (this.ph1Sensor >= 3702 && this.ph1Sensor <= 4001) {
+    } else if (this.ph1Sensor >= 6001 && this.ph1Sensor <= 6400) {
       this.ph1Sensor = 10;
-    } else if (this.ph1Sensor >= 3402 && this.ph1Sensor <= 3701) {
+    } else if (this.ph1Sensor >= 5800 && this.ph1Sensor <= 6000) {
       this.ph1Sensor = 9;
-    } else if (this.ph1Sensor >= 3102 && this.ph1Sensor <= 3401) {
+    } else if (this.ph1Sensor >= 4801 && this.ph1Sensor <= 5300) {
       this.ph1Sensor = 8;
-    } else if (this.ph1Sensor >= 2801 && this.ph1Sensor <= 3101) {
+    } else if (this.ph1Sensor >= 4301 && this.ph1Sensor <= 4800) {
       this.ph1Sensor = 7;
-    } else if (this.ph1Sensor >= 2500 && this.ph1Sensor <= 2800) {
+    } else if (this.ph1Sensor >= 2500 && this.ph1Sensor <= 4300) {
       this.ph1Sensor = 6;
-    } else if (this.ph1Sensor >= 2200 && this.ph1Sensor <= 2499) {
+    } else if (this.ph1Sensor >= 2000 && this.ph1Sensor <= 2499) {
       this.ph1Sensor = 5;
-    } else if (this.ph1Sensor >= 1900 && this.ph1Sensor <= 2199) {
+    } else if (this.ph1Sensor >= 1500 && this.ph1Sensor <= 1999) {
       this.ph1Sensor = 4;
-    } else if (this.ph1Sensor >= 1600 && this.ph1Sensor <= 1899) {
+    } else if (this.ph1Sensor >= 800 && this.ph1Sensor <= 1499) {
       this.ph1Sensor = 3;
-    } else if (this.ph1Sensor >= 1300 && this.ph1Sensor <= 1599) {
+    } else if (this.ph1Sensor >= 200 && this.ph1Sensor <= 799) {
       this.ph1Sensor = 2;
-    } else if (this.ph1Sensor >= 701 && this.ph1Sensor <= 1299) {
+    } else if (this.ph1Sensor >= 0 && this.ph1Sensor <= 199) {
       this.ph1Sensor = 1;
     } else {
       this.ph1Sensor = 0;
@@ -103,11 +103,11 @@ if (this.solid1Sen >= 0 && this.solid1Sen <= 699) {
       this.solid1Sen = 0;
     } else if (this.solid1Sen >= 700 && this.solid1Sen <= 1999) {
       this.solid1Sen = 25;
-    } else if (this.solid1Sen >= 2000 && this.solid1Sen <= 2350) {
+    } else if (this.solid1Sen >= 2000 && this.solid1Sen <= 2800) {
       this.solid1Sen = 50;
-    } else if (this.solid1Sen >= 2351 && this.solid1Sen <= 3000) {
+    } else if (this.solid1Sen >= 2801 && this.solid1Sen <= 3300) {
       this.solid1Sen = 75;
-    }else if (this.solid1Sen >= 3001 && this.solid1Sen <= 7000) {
+    }else if (this.solid1Sen >= 3301 && this.solid1Sen <= 7000) {
       this.solid1Sen = 100;
     }
 
@@ -139,20 +139,21 @@ if (this.solid1Sen >= 0 && this.solid1Sen <= 699) {
   }
 
   getColorClass() {
-    if (this.ph1Sensor >= 0 && this.ph1Sensor <= 1) {
+    if (this.ph1Sensor >= 0 && this.ph1Sensor <= 0.5) {
       return 'red';
-    } else if (this.ph1Sensor >= 2 && this.ph1Sensor <= 3) {
+    } else if (this.ph1Sensor >= 1 && this.ph1Sensor <= 2) {
       return 'orange';
-    } else if (this.ph1Sensor >= 4 && this.ph1Sensor <= 5) {
+    } else if (this.ph2Sensor >= 3 && this.ph2Sensor <= 4) {
       return 'yellow';
-    } else if (this.ph1Sensor >= 6 && this.ph1Sensor <= 7) {
+    } else if (this.ph1Sensor >= 5 && this.ph1Sensor <= 6) {
       return 'lightgreen';
-    } else if (this.ph1Sensor >= 8 && this.ph1Sensor <= 10) {
+    } else if (this.ph1Sensor >= 7 && this.ph1Sensor <= 10) {
       return 'darkgreen';
     } else if (this.ph1Sensor >= 11 && this.ph1Sensor <= 12) {
       return 'darkblue';
-    } else if (this.ph1Sensor >= 13 && this.ph1Sensor <= 15) {
+    } else if (this.ph1Sensor >= 13 && this.ph1Sensor <= 14) {
       return 'purple';
+
     }
     return 'black'; // Valor predeterminado si ninguno de los bloques if se cumple
   }
